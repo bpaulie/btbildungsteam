@@ -1,0 +1,309 @@
+﻿/* ====================================================  GLOBAL DEFINITION  ==================================================== */
+
+/* alternatives Boxmodell */
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 65em;
+  margin: 0 auto;
+  padding: 0 1em;
+  font: normal 1em Arial, sans-serif;
+  color: #E7E7F6; /* wird als currentColor für die Akzentfarbe verwendet. */
+  background-color: #FFFFFF;
+  line-height: 1.5;
+  font-size: 105%;
+}
+
+p, ol, ul, dl {color: #2D2E81;}
+
+/* ====================================================  HEADER  ==================================================== */
+
+
+
+/* ====================================================  CONTENT  ==================================================== */
+/* color: #2D2E81;     dunkelblau  */
+/* #E7E7F6;    Hellblau */
+
+.zentriert {
+ 	display: flex;
+ 	align-items: center; /* Vertikale Zentrierung */
+ 	/*justify-content: center;   Horizontale Zentrierung */
+ 	background-color: #E7E7F6;
+	padding: 10px;
+ 
+}
+
+
+
+h1, h2 {
+  color: #ffffff;
+  background-color: #2D2E81;
+  padding: 0px;
+
+}
+
+h3 {
+  color: #2D2E81;
+}
+
+a {
+  color: #2D2E81;
+  font-weight: bold;
+}
+a:hover, a:focus {
+  color: #2D2E81;
+  background-color: #E7E7F6;
+}
+
+a:focus,
+a:hover {
+  background-color:#E7E7F6;#2D2E81;
+}
+
+a.more {
+  float: right;
+}
+a.more::before {
+  content: url('../img/more.svg');
+  margin-right: .5em;
+}
+a.more:hover, a.more:focus {
+  color: #2D2E81;
+}
+a.more:hover::before, a.more:focus::before {
+  color: #2D2E81;
+}
+
+h2.img {
+  padding-left: 2.5em;
+}
+
+img, a img {
+  border: 0 none;
+}
+
+article > h2 {
+  clear: both;
+}
+article > h2 + p > img {
+	width: 33%;
+  float: right;
+  margin: .15em 1.5em 1.5em 0;
+}
+article > h2:nth-of-type(odd) + p > img {
+  float: right;
+  margin: .15em 0 1.5em 1.5em;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1em 2em;
+  margin-bottom: 3em;
+}
+dl > * {
+  margin: 0;
+  padding: 0;
+}
+dt {
+  font-weight: bold;
+}
+dt::after {
+  content: ":";
+}
+
+
+.eintrag.liste {
+font-weight: bold;
+  background-color: #E7E7F6;
+}
+
+
+
+
+DIV.zeile {
+    color: #2D2E81;
+    background-color: #E7E7F6;
+    height: 35%;
+    padding-bottom: 5px;
+    padding-top: 0px;
+
+}
+
+
+
+/* ====================================================  NAV  ==================================================== */
+/* #2D2E81;     dunkelblau  */
+/* #E7E7F6;    Hellblau */
+
+
+nav ul {
+  box-shadow: 0 .6em .3em 0 rgba(0, 0, 0, .75);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav a {
+  background-color: #2D2E81;
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  width: 95%;
+  margin: .5em 0;
+  padding: .5em 1em;
+  border-radius: .5em;
+}
+
+nav a[aria-current="page"]{
+ color: #E7E7F6;
+ font-weight: bold;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #E7E7F6;
+  color: #2D2E81;
+}
+
+nav a:hover::after ,
+nav a:focus::after{
+  color: transparent;
+}
+
+
+/* ====================================================  FOOTER  ==================================================== */
+/* color: #2D2E81;     dunkelblau  */
+/* #E7E7F6;    Hellblau */
+
+
+footer {
+  margin: 1em 0;
+  display: flex;
+  color: #E7E7F6;
+  background-color: #E7E7F6;
+}
+
+footer ul,
+footer p {
+  flex: 1 1 100%;
+}
+
+footer ul {
+  padding-left: 0;
+  margin-right: 5%;
+}
+
+footer li  {
+  list-style-type: none;
+  display: inline-block;
+  border-left: .2em solid #2D2E81;
+}
+footer li:first-child  {
+  border-left-color: transparent;
+}
+footer a {
+  color: #2D2E81;
+}
+footer a:hover, footer a:focus {
+  color: #ffffff;
+  background-color: #2D2E81;
+
+}
+footer li a {
+  padding: 0 .5em 0 .9em;
+}
+footer p {
+  margin-top: 0;
+  padding-top: 0;
+  text-align: right;
+}
+
+
+/* ====================================================  LAYOUT  ==================================================== */
+
+/* Mobile first ! alle Blöcke haben 100%, Navigation unten*/
+main  {
+  padding: 0em 0;
+  margin: 1.5em 0;
+font-weight: bold;
+}
+
+/* Navigationselemente werden untereinander angezeigt */
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2-Spaltenlayout mit breiterem aside */
+@media screen and (min-width: 25em) {
+  header {
+    height: 10em;
+  }
+}
+
+/* 2-Spaltenlayout mit breiterem aside */
+@media screen and (min-width: 45em) {
+  header {
+    background: #e7e8ee url('../img/logobt.png') no-repeat right bottom ;
+    background-size: contain;
+  }
+
+  /* Navigation wird nebeneinander ausgerichtet. */
+  nav ul {
+    flex-direction: row;
+    background-color: #E7E7F6;
+  }
+
+  nav li {
+    margin: 0;
+    flex: 1 1 0%;
+  }
+
+  /* Main wird zum Flex-Container */
+  main {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  main > * {
+    flex: 1 100%;  /* Alle Kindelemente werden über die volle Breite dargestellt */
+  }
+
+  section {
+    flex: 1 75%;  /* Diese Elemente erhalten eine halbe Breite */
+    margin: 1%;
+
+  }
+}
+
+
+
+ul.ohne {
+
+	list-style-type: none;
+        }
+
+ul.zentriert {
+
+	vertical-align: middle;
+        }
+
+
+.box {
+     position: absolute;
+     top: 10%;
+     
+     width: 70%;
+     height: 200px;
+     padding: 20px;
+     margin-left: -100px;
+     margin-top: -100px;
+     background: #fff;
+     box-sizing: border-box;
+}
+
